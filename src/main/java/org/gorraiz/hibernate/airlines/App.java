@@ -3,7 +3,6 @@ package org.gorraiz.hibernate.airlines;
 import java.util.List;
 
 import org.gorraiz.hibernate.airlines.dao.AircraftDAO;
-import org.gorraiz.hibernate.airlines.dao.PilotDAO;
 import org.gorraiz.hibernate.airlines.models.Aircraft;
 import org.gorraiz.hibernate.airlines.models.Pilot;
 
@@ -16,7 +15,7 @@ public class App
 {
 	public static void showAll(AircraftDAO aircraftDAO) {
 		List<Aircraft> aircrafts = aircraftDAO.selectAll();
-		System.out.println("--- PRODUCT ----- table contents-----------");
+		System.out.println("--- AIRCRAFT ----- table contents-----------");
 		for (Aircraft aircraft : aircrafts) {
 			System.out.println("Id: " + aircraft.getId());
 			System.out.println(" - Model: " + aircraft.getModel());
@@ -38,10 +37,8 @@ public class App
      iberia.setPilot(mari);
      
      	
-		PilotDAO pilotDAO = new PilotDAO();
-		
-		aircraftDAO.insert(airbus);
-		aircraftDAO.insert(iberia);
+     	aircraftDAO.insert(iberia);
+     	aircraftDAO.insert(airbus);
 		
 		
     }
